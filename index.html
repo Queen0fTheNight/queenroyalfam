@@ -19,14 +19,101 @@
             color: white;
 
         }
-
-        #curved-text {
-            font-family: Arial;
-
-        }
         .site-header {
             background-color: #2c3e50; /* Dark blue background */
             /* Or use rgb(44, 62, 80) */
+
+        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Premium Image Header Base */
+.site-header {
+    position: relative;
+    min-height: 120px;
+    background-image: url('your-image-path.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+/* Professional Dark Overlay for Text Readability */
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180px, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: 1;
+}
+
+/* Inner Layout Container */
+.header-content {
+    position: relative;
+    z-index: 2; /* Sits above the dark overlay */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Typography & Logo */
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+}
+
+/* Navigation Row */
+.navigation ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 32px; /* Modern spacing property instead of margins */
+}
+
+/* Minimalist Navigation Links */
+.navigation a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navigation a:hover,
+.navigation a.active {
+    color: #ffffff;
+}
+
+/* High-End Call-To-Action Button */
+.navigation .cta-button {
+    background-color: #ffffff;
+    color: #111111;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.navigation .cta-button:hover {
+    background-color: #f3f4f6;
+    color: #111111;
+    transform: translateY(-1px);
+
 }
 
     </style>
@@ -34,16 +121,20 @@
 <body>
 
   <header class="site-header">
+    <div class="header-overlay"></div>
+    <div class="header-content">
         <div class="logo">MyLogo</div>
         <nav class="navigation">
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="cta-button">Contact</a></li>
             </ul>
         </nav>
-    </header>
+    </div>
+</header>
+
     
     <h1>THE ROYAL PALACE</h1>
     <p class="name">Testiinngg.</p>
